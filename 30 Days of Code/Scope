@@ -1,0 +1,22 @@
+Task
+https://www.hackerrank.com/challenges/30-scope/problem
+
+int k;
+int[] b = new int[k];
+public  Difference( int a[])
+{
+    k = a.length;
+   // int[] a= new int[k];
+    b=a;
+}
+//maximumDifference=0;
+public void computeDifference()
+{
+   for(int j=0;j<k;j++){ 
+for(int i=0;i<k;i++)
+{
+    if(Math.abs(b[j]-b[i])>maximumDifference)
+     maximumDifference=Math.abs(b[j]-b[i]);   
+}
+   }
+}
