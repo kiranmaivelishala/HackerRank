@@ -1,0 +1,80 @@
+Task
+https://www.hackerrank.com/challenges/diagonal-difference/problem
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    
+    // Complete the diagonalDifference function below.
+    static int diagonalDifference(int[][] a) {
+ int sum=0;
+        int b=0;
+    int c=0;
+        int k=a.length;
+        int l=1;
+for(int i=0;i<k;i++)
+{
+    for(int j=0;j<k;j++)
+    {
+        
+          c=c+a[i][k-l];
+        break;
+        
+    }
+    if(l<k)
+    l++;
+}
+        for(int m=0;m<k;m++)
+        {
+            for(int n=0;n<k;n++)
+            {
+                if(m==n)
+        
+            b=b+a[m][n];
+         
+        
+            }
+        }
+        
+          //c=a[0][2];
+        sum=Math.abs(b-c);
+return sum;
+    }
+
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) throws IOException {
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        int n = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+        int[][] a = new int[n][n];
+
+        for (int i = 0; i < n; i++) {
+            String[] aRowItems = scanner.nextLine().split(" ");
+            scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+            for (int j = 0; j < n; j++) {
+                int aItem = Integer.parseInt(aRowItems[j]);
+                a[i][j] = aItem;
+            }
+        }
+
+        int result = diagonalDifference(a);
+
+        bufferedWriter.write(String.valueOf(result));
+        bufferedWriter.newLine();
+
+        bufferedWriter.close();
+
+        scanner.close();
+    }
+}
