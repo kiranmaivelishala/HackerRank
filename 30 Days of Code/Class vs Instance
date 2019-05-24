@@ -1,0 +1,38 @@
+Task 
+Write a Person class with an instance variable,age , and a constructor that takes an integer,initialAge , as a parameter. 
+The constructor must assign initialAge to age after confirming the argument passed as initialAge is not negative; 
+if a negative argument is passed as initialAge , the constructor should set age to 0 and print Age is not valid, setting age to 0.. 
+In addition, you must write the following instance methods:
+*yearPasses() should increase the age instance variable by 1 .
+*amIOld() should perform the following conditional actions:
+If age<13, print You are young..
+If age>=13 and age<18, print You are a teenager..
+Otherwise, print You are old..
+
+public class Person {
+    private int age;	
+  
+	public Person(int initialAge) {
+  		// Add some more code to run some checks on initialAge4
+        age=initialAge;
+        if(age<0)
+        {
+            age=0;
+            System.out.println("Age is not valid, setting age to 0.");
+        }
+	}
+
+	public void amIOld() {
+  		// Write code determining if this person's age is old and print the correct statement:
+        if(age>=18)
+        System.out.println(/*Insert correct print statement here*/"You are old.");
+        if(age<13)
+            System.out.println(/*Insert correct print statement here*/"You are young.");
+        if(age>=13 && age<18)
+            System.out.println(/*Insert correct print statement here*/"You are a teenager.");
+	}
+
+	public void yearPasses() {
+  		// Increment this person's age.
+        age=age+1;
+	}
