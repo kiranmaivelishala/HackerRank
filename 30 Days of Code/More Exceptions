@@ -1,0 +1,18 @@
+Task
+https://www.hackerrank.com/challenges/30-more-exceptions/problem
+
+class Calculator{
+    int l,o;
+    int s;
+    int power(int n, int p) throws Exception
+    {
+        this.l=n;
+        this.o=p;
+           if(l < 0 || o < 0)
+            {
+                    throw new Exception("n and p should be non-negative");
+            }
+       // s=Math.pow(l,o);
+        return (int) Math.pow(l, o);
+    }
+}
